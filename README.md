@@ -32,3 +32,6 @@ yarn run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### 访问
+locahost:8080/manage.html
