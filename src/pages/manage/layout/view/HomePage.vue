@@ -35,7 +35,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import Service from '../service/HomeService';
 import HomePage from '../model/HomePage';
 import { CommonModel } from '@/pages/manage/common/CommonModel';
-import { PageLoading } from '@/pages/manage/common/components';
+import { PageLoading } from '@/modules';
 @Component({
   components: {
     PageLoading,
@@ -97,7 +97,7 @@ export default class Home extends Vue {
     left: 0;
     height: 76px;
     width: 100%;
-    background: linear-gradient( lightblue,white);
+    background: linear-gradient(white, rgb(198, 230, 241),white);
     border-bottom: 4px solid  blue;
   }
   .side-bar {

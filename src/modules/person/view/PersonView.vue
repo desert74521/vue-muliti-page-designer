@@ -1,7 +1,7 @@
 <template>
   <div class="page-table">
     <el-table
-      :data="model.page.persons"
+      :data="model.persons"
       border
       style="width: 99.99%">
       <el-table-column
@@ -28,8 +28,8 @@
     <div>
       <el-pagination
         @current-change="handleCurrentChange"
-        :page-size="model.page.pageSize"
-        :current-page="model.page.pageNum"
+        :page-size="model.pageSize"
+        :current-page="model.pageNum"
         layout="prev, pager, next"
         :total="11">
       </el-pagination>
@@ -42,21 +42,16 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Service from '../service/PersonService';
 import PersonPage from '../model/PersonPage';
-import { CommonModel } from '@/pages/manage/common/CommonModel';
 
 
 // 控制器
 @Component
 export default class PageTable extends Vue {
-  private model: CommonModel<PersonPage> = new CommonModel<PersonPage>({
-    $store: this.$store,
-    $message: this.$message,
-    page: {
-        persons: [],
-        pageNum: 1,
-        pageSize: 10,
-    },
-  });
+  private model: PersonPage = {
+      persons: [],
+      pageNum: 1,
+      pageSize: 10,
+  };
   private service: Service = new Service(this.model);
 
   private created() {

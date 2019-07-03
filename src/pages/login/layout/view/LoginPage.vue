@@ -13,7 +13,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import Service from '../service/LayoutService';
 import LoginPage from '../model/LoginPage';
 import { CommonModel } from '@/pages/login/common/CommonModel';
-import { PageLoading } from '@/pages/login/common/components';
+import { PageLoading } from '@/modules';
 import LoginBox from '@/pages/login/login/view/LoginBox.vue';
 @Component({
   components: {

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { PersonPage } from '../person/router';
+import { PersonList } from '@/modules';
 import { HomePage } from '../layout/router';
 
 Vue.use(Router);
@@ -15,7 +15,7 @@ export default new Router({
         {
           path: 'person_table',
           name: '人员示例',
-          component: PersonPage,
+          component: PersonList,
         },
         {
           path: 'hello',
