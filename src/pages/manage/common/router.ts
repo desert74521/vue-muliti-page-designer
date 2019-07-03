@@ -9,17 +9,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: '首页',
       component: HomePage,
       children: [
         {
           path: 'person_table',
-          name: 'person_table',
+          name: '人员示例',
           component: PersonPage,
         },
         {
           path: 'hello',
-          name: 'hello',
+          name: '首页示例',
           component: HomePage,
           redirect: '/',
         },

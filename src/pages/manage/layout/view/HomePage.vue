@@ -1,7 +1,13 @@
 <template>
   <div class="home-box">
     <div class="header-bar">
-      <el-button @click="toggleSideBar">toggle</el-button>
+    </div>
+    <div 
+    class="toggle-menu" 
+    @click="toggleSideBar"  
+    :style="'width:' + model.page.sideWidth + 'px'"
+    >
+        <i class="el-icon-s-unfold"></i>
     </div>
     <div class="side-bar" :style="'width:' + model.page.sideWidth + 'px'">
       <el-menu default-active="1-4-1" class="el-menu-vertical-demo" :collapse-transition="false" :router="true" :collapse="model.page.sideWidth === 65">
@@ -11,8 +17,10 @@
         </el-menu-item>
       </el-menu>
     </div>
-    <div class="tags-bar" :style="'margin-left:' + model.page.sideWidth + 'px'">
-
+    <div class="tags-bar" :style="'margin-left:' + (model.page.sideWidth + 4) + 'px'">
+      <el-tag size="medium" type="" effect="dark"> >
+      {{$route.name}}
+      </el-tag>
     </div>
     <div class="main-page" :style="'margin-left:' + model.page.sideWidth + 'px'">
         <img v-if="$route.path == '/'" :src="model.page.homeImg" alt="">
@@ -64,34 +72,56 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    min-width: 200px;
+    min-width: 198px;
 }
 .home-box {
   width: 100%;
+  .toggle-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 80px; 
+    height: 40px;
+    padding: auto;
+    text-align: center;
+    line-height: 40px;
+    border-right: 4px solid blue;
+    background: rgb(224, 220, 220)
+  }
+  .toggle-menu:hover {
+    cursor: pointer;
+  }
   .header-bar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 76px;
     width: 100%;
-    background: gray;
+    background: linear-gradient( lightblue,white);
+    border-bottom: 4px solid  blue;
   }
   .side-bar {
     position: fixed;
-    margin-top: 80px; 
+    margin-top: 120px; 
     top: 0;
     left: 0;
     bottom: 0;
-    background:lightgray;
+    border-right: 4px solid blue;
   }
   .tags-bar {
     position: fixed;
     margin-top: 80px;
-    height: 50px;
+    height: 40px;
     width: 100%;
     top: 0;
     left: 0;
-    background: rgb(195, 223, 224);
+    line-height: 40px;
+    padding: 0 5px;
+    background: rgb(219, 237, 243);
+    border-bottom: 1px solid lightblue;
+    .tages-router {
+      margin: 0 5px;
+    }
   }
   .main-page {
     margin-top: 130px; 
