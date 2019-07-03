@@ -22,3 +22,7 @@ export function validateJsonBySchema(instance: any, schema: Schema): boolean {
     }
 }
 
+export function copyObject(source: any): any {
+    return JSON.parse(JSON.stringify(source));
+}
+

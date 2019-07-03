@@ -48,7 +48,7 @@ import { CommonModel } from '@/pages/manage/common/CommonModel';
 // 控制器
 @Component
 export default class PageTable extends Vue {
-  private model: CommonModel<PersonPage> = {
+  private model: CommonModel<PersonPage> = new CommonModel<PersonPage>({
     $store: this.$store,
     $message: this.$message,
     page: {
@@ -56,7 +56,7 @@ export default class PageTable extends Vue {
         pageNum: 1,
         pageSize: 10,
     },
-  };
+  });
   private service: Service = new Service(this.model);
 
   private created() {

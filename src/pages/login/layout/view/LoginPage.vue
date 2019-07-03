@@ -24,8 +24,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Service from '../service/HomeService';
-import HomePage from '../model/HomePage';
+import Service from '../service/LoginService';
+import LoginPage from '../model/LoginPage';
 import { CommonModel } from '@/pages/manage/common/CommonModel';
 import { PageLoading } from '@/pages/manage/common/components';
 @Component({
@@ -34,30 +34,14 @@ import { PageLoading } from '@/pages/manage/common/components';
   },
 })
 export default class Home extends Vue {
-  private model: CommonModel<HomePage> = new CommonModel<HomePage>({
-    $store: this.$store,
-    $message: this.$message,
-    page: {
-        homeImg: require('@/assets/vue_mvc_designer.png'),
-        sideWidth: 65,
-        routers: [
-          {
-            icon: 'el-icon-s-home',
-            title: '示例首页',
-            path: '/hello',
-          },
-          {
-            icon: 'el-icon-user',
-            title: '示例人员',
-            path: '/person_table',
-          },
-      ],
-    },
+  private model: CommonModel<LoginPage> = new CommonModel<LoginPage>({
+      page: {
+          loginImg: '',
+          loginWord: '',
+      },
   });
   private service: Service = new Service(this.model);
-  private toggleSideBar(): void {
-    this.service.toggleSideBar();
-  }
+
 
 }
 </script>

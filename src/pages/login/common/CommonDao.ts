@@ -9,13 +9,4 @@ export class CommonDao extends BaseDao {
         this.$store = $store;
         this.$message = $message;
     }
-
-    public closeMask() {
-        this.$store.commit('app/HIDE_MASK');
-    }
-
-    public openMask() {
-        this.$store.commit('app/SHOW_MASK');
-    }
-
 }

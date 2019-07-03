@@ -6,7 +6,7 @@ import HomePage from '../model/HomePage';
 export class DataAccess extends CommonDao {
     private model: CommonModel<HomePage>;
     constructor(model: CommonModel<HomePage>) {
-        super(model.$store);
+        super(model.$store, model.$message);
         this.model = model;
     }
 

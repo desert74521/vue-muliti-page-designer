@@ -5,9 +5,9 @@ import PersonPage from '../model/PersonPage';
 
 // 数据操作层
 export class DataAccess extends CommonDao {
-    private model: CommonModel<PersonPage> = new CommonModel<PersonPage>();
+    private model: CommonModel<PersonPage>;
     constructor(model: CommonModel<PersonPage>) {
-        super(model.$store);
+        super(model.$store, model.$message);
         this.model = model;
     }
 
