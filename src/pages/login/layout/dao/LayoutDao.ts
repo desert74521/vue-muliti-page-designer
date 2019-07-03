@@ -1,5 +1,5 @@
-import { CommonModel } from '@/pages/manage/common/CommonModel';
-import { CommonDao } from '@/pages/manage/common/CommonDao';
+import { CommonModel } from '@/pages/login/common/CommonModel';
+import { CommonDao } from '@/pages/login/common/CommonDao';
 import LoginPage from '../model/LoginPage';
 
 // 数据操作层
