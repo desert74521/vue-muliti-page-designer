@@ -11,6 +11,8 @@ export class DataAccess extends BaseDao {
     }
 
     public async requiredDataPageDataByPageNp(pageNo: number): Promise<any> {
+        this.model.isLoading = true;
         this.model.persons = await api.get('', pageNo, this.model.pageSize);
+        this.model.isLoading = false;
     }
 }

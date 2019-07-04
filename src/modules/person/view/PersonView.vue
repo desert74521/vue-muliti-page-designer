@@ -34,6 +34,7 @@
         :total="11">
       </el-pagination>
     </div>
+  <page-loading :isLoading="model.isLoading"></page-loading>
  </div>
 </template>
 
@@ -42,12 +43,18 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Service from '../service/PersonService';
 import PersonPage from '../model/PersonPage';
+import { PageLoading } from '@/modules/common';
 
 
 // 控制器
-@Component
+@Component({
+  components: {
+    PageLoading,
+  },
+})
 export default class PageTable extends Vue {
   private model: PersonPage = {
+      isLoading: false,
       persons: [],
       pageNum: 1,
       pageSize: 10,

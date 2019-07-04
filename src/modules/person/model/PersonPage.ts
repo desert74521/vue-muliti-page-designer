@@ -4,6 +4,8 @@ import Person from './Person';
 @Exclude()
 export default class PersonPage {
 
+  public isLoading: boolean = true;
+
   @Expose()
   public persons: Person[] | undefined;
 

@@ -1,4 +1,6 @@
 
-import PageLoad from './view/PageLoading.vue';
+import PageLoading from './view/PageLoading.vue';
 
-export class PageLoading extends PageLoad {}
+export {
+    PageLoading,
+};

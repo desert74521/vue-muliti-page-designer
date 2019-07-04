@@ -9,4 +9,6 @@ export class BaseModel {
 
   public cookie?: any = document && document.cookie;
 
+  public urlParams?: any = {};
+
 }
