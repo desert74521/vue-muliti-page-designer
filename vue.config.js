@@ -5,7 +5,7 @@ module.exports = {
             entry: 'src/pages/manage/main.ts',
 
             // 应用的模版，相当于单页面应用的public/index.html，可选项，省略时默认与模块名一致
-            template: 'public/index.html',
+            template: 'src/pages/manage/index.html',
 
             // 编译后在dist目录的输出文件名，可选项，省略时默认与模块名一致
             filename: 'manage.html',
@@ -19,7 +19,7 @@ module.exports = {
             entry: 'src/pages/login/main.ts',
 
             // 应用的模版，相当于单页面应用的public/index.html，可选项，省略时默认与模块名一致
-            template: 'public/index.html',
+            template: 'src/pages/login/index.html',
 
             // 编译后在dist目录的输出文件名，可选项，省略时默认与模块名一致
             filename: 'login.html',

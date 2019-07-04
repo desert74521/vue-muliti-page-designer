@@ -11,4 +11,6 @@ export class BaseModel {
 
   public urlParams?: any = {};
 
+  public window?: any = window;
+
 }

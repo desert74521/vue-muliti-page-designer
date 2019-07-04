@@ -1,6 +1,9 @@
 <template>
   <div class="home-box">
     <div class="header-bar">
+      <div class="user-info">
+        <user-info/>
+      </div>
     </div>
     <div 
     class="toggle-menu" 
@@ -23,7 +26,6 @@
       </el-tag>
     </div>
     <div class="main-page" :style="'margin-left:' + model.page.sideWidth + 'px'">
-        <img v-if="$route.path == '/'" :src="model.page.homeImg" alt="">
         <router-view/>
     </div>
     <page-loading :isLoading="$store.state.app.masking"></page-loading>
@@ -32,13 +34,14 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Service from '../service/HomeService';
-import HomePage from '../model/HomePage';
+import Service from './service/HomeService';
+import HomePage from './model/HomePage';
 import { CommonModel } from '@/pages/manage/common/CommonModel';
-import { PageLoading } from '@/modules';
+import { PageLoading, UserInfo } from '@/modules';
 @Component({
   components: {
     PageLoading,
+    UserInfo,
   },
 })
 export default class Home extends Vue {
@@ -70,7 +73,7 @@ export default class Home extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     min-width: 198px;
 }
@@ -99,6 +102,10 @@ export default class Home extends Vue {
     width: 100%;
     background: linear-gradient(white, rgb(198, 230, 241),white);
     border-bottom: 4px solid  blue;
+    .user-info {
+      width: 150px;
+      float: right;
+    }
   }
   .side-bar {
     position: fixed;

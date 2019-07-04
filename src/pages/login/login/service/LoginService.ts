@@ -10,4 +10,8 @@ export default class Service extends CommonService {
       this.dataAccess = new DataAccess(model);
     }
 
+    public login(): void {
+      this.dataAccess.changeUrl('/manage.html');
+    }
+
 }

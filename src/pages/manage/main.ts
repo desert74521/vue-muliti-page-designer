@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from './App.vue';
+import HomePage from './layout/HomePage.vue';
 import router from './common/router';
 import store from './common/store';
 Vue.config.productionTip = false;
@@ -11,5 +11,5 @@ Vue.use(element);
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: (h) => h(HomePage),
 }).$mount('#app');

@@ -1,8 +1,7 @@
 <template>
   <div class="layout-box">
     <div class="layout-page" :style="'background:url('+ model.page.loginImg +')'">
-        <LoginBox></LoginBox>
-        
+        <login-box></login-box>       
     </div>
     <page-loading :isLoading="$store.state.app.masking"></page-loading>
   </div>
@@ -10,11 +9,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Service from '../service/LayoutService';
-import LoginPage from '../model/LoginPage';
+import Service from './service/LayoutService';
+import LoginPage from './model/LoginPage';
 import { CommonModel } from '@/pages/login/common/CommonModel';
 import { PageLoading } from '@/modules';
-import LoginBox from '@/pages/login/login/view/LoginBox.vue';
+import LoginBox from '@/pages/login/login/LoginBox.vue';
 @Component({
   components: {
     PageLoading,
